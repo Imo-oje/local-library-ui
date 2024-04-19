@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div className={Styles.layout}>
       <Navbar />
-      <main>{children}</main>
+      <main className={Styles.main}>{children}</main>
     </div>
   );
 }

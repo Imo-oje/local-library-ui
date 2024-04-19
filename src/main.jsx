@@ -7,6 +7,7 @@ import Settings from "./pages/Settings.jsx";
 import Profile from "./pages/Profile.jsx";
 import Search from "./components/Search.jsx";
 import "./index.css";
+import "./styles/responsive.css";
 
 const router = createBrowserRouter([
   {

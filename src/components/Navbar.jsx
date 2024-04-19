@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className={Styles.nav}>
       <ul>
-        <CustomLink to="/">
+        <CustomLink className={Styles.hideFromMobile} to="/">
           <IoLogoBuffer />
         </CustomLink>
         <div>
@@ -28,7 +28,7 @@ export default function Navbar() {
             <FaRegUser />
           </CustomLink>
         </div>
-        <CustomLink to="/settings">
+        <CustomLink className={Styles.hideFromMobile} to="/settings">
           <IoSettingsOutline />
         </CustomLink>
       </ul>

@@ -1,4 +1,11 @@
 .layout {
-  display: grid;
-  grid-template-columns: 4rem 1fr;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media only screen and (min-width: 600px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+  }
 }

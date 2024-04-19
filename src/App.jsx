@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { IoPlaySharp } from "react-icons/io5";
 import { FiHeart } from "react-icons/fi";
 import { BsWindowSidebar } from "react-icons/bs";
+import Carousel from "./components/Carousel";
 
 /* function getData() {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,8 @@ function App() {
   } */
   return (
     <Layout>
-      <h1>App</h1>
+      <Carousel />
+
       {/* <div className="faded-circle"></div> */}
       {/*
       <h2>
