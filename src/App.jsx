@@ -30,7 +30,7 @@ function getData() {
 function App() {
   const { loading, data, error } = getData();
   if (error) {
-    return <h2>{error} : A network error was encountered!</h2>;
+    return <h2>{`A network error was encountered || ${error}`}</h2>;
   }
   return (
     <Layout>
