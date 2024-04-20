@@ -8,6 +8,7 @@ import Profile from "./pages/Profile.jsx";
 import Search from "./components/Search.jsx";
 import "./index.css";
 import "./styles/responsive.css";
+import ProductDetail from "./components/views/product/ProductDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings />,
+  },
+  {
+    path: "/books/:id",
+    element: <ProductDetail />,
   },
 ]);
 

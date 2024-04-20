@@ -62,3 +62,8 @@ body {
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3b404b",endColorstr="#111419",GradientType=1);
 }
+
+a {
+  display: block;
+  color: #fff;
+}
