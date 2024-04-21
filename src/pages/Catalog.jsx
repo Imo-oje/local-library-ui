@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ({ loading, data, addProduct, addError }) {
+export default function ({ itemCount, loading, data, addProduct, addError }) {
   return (
     <div>
       {loading
@@ -17,6 +17,7 @@ export default function ({ loading, data, addProduct, addError }) {
           })}
 
       <p>{addError}</p>
+      <h2>{itemCount === 0 ? "" : itemCount}</h2>
     </div>
   );
 }

@@ -31,6 +31,8 @@ function getData() {
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [count, setCount] = useState(0);
+
   const [addError, setaddError] = useState(""); //testin purpose
 
   function addItem(product) {
@@ -41,9 +43,33 @@ function App() {
     } else {
       //clear error message first
       setaddError("");
+      updateCount();
       setCartItems([...cartItems, { ...product }]);
       console.log(product._id);
     }
+  }
+
+  function updateCount() {
+    setCount((prevCount) => {
+      return prevCount + 1;
+    });
+    /* const empty = cartItems.length === 0;
+    if (empty) {
+      setCount(0);
+    } else {
+      setCount((prevCount) => {
+        return prevCount + 1;
+      });
+    } */
+  }
+  function updateCart(cart, itemIndex) {
+    if (itemIndex > -1) {
+      cart.splice(itemIndex, 1);
+    }
+    setCartItems(cart);
+    setCount((prevCount) => {
+      return prevCount - 1;
+    });
   }
 
   const { loading, data, error } = getData();
@@ -59,6 +85,8 @@ function App() {
           cartItems={cartItems}
           addProduct={addItem}
           addError={addError}
+          itemCount={count}
+          updateCart={updateCart}
         />
       </Layout>
     </Router>
