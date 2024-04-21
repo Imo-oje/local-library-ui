@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoLogoBuffer } from "react-icons/io";
 import { IoSettingsOutline, IoSearchSharp } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { MdShoppingCartCheckout } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa6";
 import Styles from "../styles/navbar.module.css";
 import CustomLink from "../utils/CustomLink";
@@ -21,8 +21,8 @@ export default function Navbar() {
           <CustomLink to="/">
             <AiOutlineHome />
           </CustomLink>
-          <CustomLink to="/dashboard">
-            <MdOutlineDashboardCustomize />
+          <CustomLink to="/cart">
+            <MdShoppingCartCheckout />
           </CustomLink>
           <CustomLink to="/profile">
             <FaRegUser />

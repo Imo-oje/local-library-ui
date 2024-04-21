@@ -3,8 +3,10 @@ import Layout from "./Layout";
 import { IoPlaySharp } from "react-icons/io5";
 import { FiHeart } from "react-icons/fi";
 import { BsWindowSidebar } from "react-icons/bs";
-import Carousel from "./components/Carousel";
 import { Link } from "react-router-dom";
+import Catalog from "./pages/Catalog";
+import RouteHandler from "./config/Routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function getData() {
   const [loading, setLoading] = useState(true);
@@ -28,31 +30,38 @@ function getData() {
 }
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const [addError, setaddError] = useState(""); //testin purpose
+
+  function addItem(product) {
+    const itemExists = cartItems.find((item) => item._id === product._id);
+    if (itemExists) {
+      setaddError("Book already in Cart");
+      //setCartItems(cartItems.map((item) => (item._id === product._id ? { ...itemExists } : item)));
+    } else {
+      //clear error message first
+      setaddError("");
+      setCartItems([...cartItems, { ...product }]);
+      console.log(product._id);
+    }
+  }
+
   const { loading, data, error } = getData();
   if (error) {
     return <h2>{`A network error was encountered || ${error}`}</h2>;
   }
   return (
-    <Layout>
-      <Carousel />
-
-      {/* <div className="faded-circle"></div> */}
-      {
-        <div>
-          {loading
-            ? "loading..."
-            : data.length <= 0
-            ? "No books available"
-            : data.map((book) => {
-                return (
-                  <Link to={`/books/${book._id}`} key={book._id}>
-                    {book.title}
-                  </Link>
-                );
-              })}
-        </div>
-      }
-    </Layout>
+    <Router>
+      <Layout>
+        <RouteHandler
+          loading={loading}
+          data={data}
+          cartItems={cartItems}
+          addProduct={addItem}
+          addError={addError}
+        />
+      </Layout>
+    </Router>
   );
 }
 
