@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RouteHandler from "./config/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
+import Layout from "./Layout";
 
 function getData() {
   const [loading, setLoading] = useState(true);
@@ -39,7 +40,6 @@ function App() {
       setaddError("");
       updateCount();
       setCartItems([...cartItems, { ...product }]);
-      console.log(product._id);
     }
   }
 
