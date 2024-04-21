@@ -1,6 +1,6 @@
-import CartItems from "../components/views/cart/CartItems";
+import ItemCard from "../components/views/cart/ItemCard";
 import Layout from "../Layout";
 
 export default function Cart({ cartItems, updateCart }) {
-  return <CartItems cartItems={cartItems} updateCart={updateCart} />;
+  return <ItemCard cartItems={cartItems} updateCart={updateCart} />;
 }

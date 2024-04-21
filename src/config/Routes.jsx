@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Catalog from "../pages/Catalog";
 import Cart from "../pages/Cart";
+import BookDetail from "../components/views/book/BookDetails";
+import Profile from "../pages/Profile";
 
 export default function RouteHandler({
   itemCount,
@@ -26,6 +28,8 @@ export default function RouteHandler({
         }
       />
       <Route path="/cart" element={<Cart cartItems={cartItems} updateCart={updateCart} />} />
+      <Route path="/books/:id" element={<BookDetail addProduct={addProduct} />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }

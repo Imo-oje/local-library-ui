@@ -24,32 +24,38 @@ function bookInfo(id) {
   return { info, error, loading };
 }
 
-export default function BookDetail() {
+export default function BookDetail({ addProduct }) {
   const { id } = useParams();
   const { info, error, loading } = bookInfo(id);
 
   if (error) return <p>Could'nt get book info</p>;
 
   return (
-    <Layout>
+    <>
       <h1>{id}</h1>
-      {
-        <div>
-          {loading ? (
-            "loading..."
-          ) : !info ? (
-            "book info not found"
-          ) : (
+
+      <div>
+        {loading ? (
+          "loading..."
+        ) : !info ? (
+          "book info not found"
+        ) : (
+          <div>
+            <small>{info.book._id}</small>
+            <h2>{info.book.author.family_name}</h2>
             <div>
-              <h1>{info.book.title}</h1>
-              <h2>{info.book.author.family_name}</h2>
-              <div>
-                <p>{info.book.summary}</p>
-              </div>
+              <p>{info.book.summary}</p>
             </div>
-          )}
-        </div>
-      }
-    </Layout>
+            <button
+              onClick={() => {
+                addProduct(info.book);
+              }}
+            >
+              add to cart
+            </button>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

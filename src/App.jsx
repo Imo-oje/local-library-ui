@@ -1,10 +1,4 @@
 import { useEffect, useState } from "react";
-import Layout from "./Layout";
-import { IoPlaySharp } from "react-icons/io5";
-import { FiHeart } from "react-icons/fi";
-import { BsWindowSidebar } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import Catalog from "./pages/Catalog";
 import RouteHandler from "./config/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 

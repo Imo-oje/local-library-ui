@@ -1,4 +1,4 @@
-export default function CartItems({ cartItems, updateCart }) {
+export default function ItemCard({ cartItems, updateCart }) {
   return (
     <div>
       {cartItems.length === 0 && <p>There are no items in cart</p>}
