@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RouteHandler from "./config/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
+import Error from "./components/error/Error";
 import Layout from "./Layout";
 
 function getData() {
@@ -68,7 +69,19 @@ function App() {
 
   const { loading, data, error } = getData();
   if (error) {
-    return <h2>{`A network error was encountered || ${error}`}</h2>;
+    return (
+      <Router>
+        <Layout>
+          <Error
+            message="Uh oh!, there seems to be a problem."
+            code="404"
+            directTo="/"
+            details="Please check your internet connection and"
+            linkText="try again"
+          />
+        </Layout>
+      </Router>
+    );
   }
   return (
     <Router>

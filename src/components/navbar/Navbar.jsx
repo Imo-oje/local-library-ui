@@ -4,14 +4,14 @@ import { IoSettingsOutline, IoSearchSharp } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa6";
-import Styles from "../styles/navbar.module.css";
-import CustomLink from "../utils/CustomLink";
+import "./navbar.css";
+import CustomLink from "../../utils/CustomLink";
 
 export default function Navbar() {
   return (
-    <nav className={Styles.nav}>
+    <nav className="nav">
       <ul>
-        <CustomLink className={Styles.hideFromMobile} to="/">
+        <CustomLink className="hideFromMobile" to="/">
           <IoLogoBuffer />
         </CustomLink>
         <div>
@@ -28,7 +28,7 @@ export default function Navbar() {
             <FaRegUser />
           </CustomLink>
         </div>
-        <CustomLink className={Styles.hideFromMobile} to="/settings">
+        <CustomLink className="hideFromMobile" to="/settings">
           <IoSettingsOutline />
         </CustomLink>
       </ul>

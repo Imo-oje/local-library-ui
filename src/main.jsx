@@ -1,14 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import Cart from "./pages/Cart.jsx";
-import Settings from "./pages/Settings.jsx";
-import Profile from "./pages/Profile.jsx";
-import Search from "./components/Search.jsx";
 import "./index.css";
 import "./styles/responsive.css";
-import BookDetail from "./components/views/book/BookDetails.jsx";
 
 /* const router = createBrowserRouter([
   {

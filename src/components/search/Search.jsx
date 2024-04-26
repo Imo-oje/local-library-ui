@@ -1,4 +1,5 @@
-import Layout from "../Layout";
+import Layout from "../../Layout";
+import "./search.css"
 
 export default function Search() {
   return (
