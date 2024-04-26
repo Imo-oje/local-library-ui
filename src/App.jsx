@@ -74,7 +74,7 @@ function App() {
         <Layout>
           <Error
             message="Uh oh!, there seems to be a problem."
-            code="404"
+            code="500"
             directTo="/"
             details="Please check your internet connection and"
             linkText="try again"
