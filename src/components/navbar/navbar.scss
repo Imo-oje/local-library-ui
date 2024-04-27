@@ -1,9 +1,11 @@
 nav ul {
   list-style: none;
   border-radius: 0.5rem 0.5rem 0 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  bottom: 5px;
+  bottom: 0;
+  background: #0d1013;
+  height: 50px;
 }
 
 nav ul div {
@@ -81,6 +83,7 @@ nav ul div a[href="/search"] {
     list-style: none;
     height: 100%;
     overflow: hidden;
+    background: rgb(58, 63, 74);
 
     position: relative;
     bottom: 0;
@@ -107,4 +110,16 @@ nav ul div a[href="/search"] {
     top: 0;
     right: 100%;
   }
+}
+
+#cart-icon {
+  position: relative;
+}
+
+small {
+  padding: 2px 5px;
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman";
 }

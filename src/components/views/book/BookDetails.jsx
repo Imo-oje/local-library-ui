@@ -41,7 +41,6 @@ export default function BookDetail({ addProduct }) {
           "book info not found"
         ) : (
           <div>
-            <small>{info.book._id}</small>
             <h2>{info.book.author.family_name}</h2>
             <div>
               <p>{info.book.summary}</p>

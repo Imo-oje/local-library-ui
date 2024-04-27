@@ -27,7 +27,7 @@ function getData() {
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [count, setCount] = useState(0);
+  const [itemCount, setCount] = useState(0);
 
   const [addError, setaddError] = useState(""); //testin purpose
 
@@ -85,14 +85,13 @@ function App() {
   }
   return (
     <Router>
-      <Layout>
+      <Layout itemCount={itemCount}>
         <RouteHandler
           loading={loading}
           data={data}
           cartItems={cartItems}
           addProduct={addItem}
           addError={addError}
-          itemCount={count}
           updateCart={updateCart}
         />
       </Layout>

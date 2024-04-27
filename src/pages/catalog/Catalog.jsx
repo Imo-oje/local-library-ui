@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
-import "./catalog.css";
+import "./catalog.scss";
 
-export default function ({ itemCount, loading, data, addProduct, addError }) {
+export default function ({ loading, data, addProduct, addError }) {
   return (
-    <div>
+    <div className="flex-container">
       {loading ? (
         <ThreeDots
           visible={true}
@@ -17,11 +17,11 @@ export default function ({ itemCount, loading, data, addProduct, addError }) {
           wrapperClass="loading"
         />
       ) : data.length <= 0 ? (
-        "No books available"
+        <h2>No books available</h2>
       ) : (
         data.map((book) => {
           return (
-            <div key={book._id}>
+            <div key={book._id} className="book">
               <Link to={`/books/${book._id}`}>{book.title}</Link>
               <button onClick={() => addProduct(book)}>Add to cart</button>
             </div>
@@ -30,7 +30,6 @@ export default function ({ itemCount, loading, data, addProduct, addError }) {
       )}
 
       <p>{addError}</p>
-      <h2>{itemCount === 0 ? "" : itemCount}</h2>
     </div>
   );
 }

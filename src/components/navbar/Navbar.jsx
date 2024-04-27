@@ -4,10 +4,10 @@ import { IoSettingsOutline, IoSearchSharp } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa6";
-import "./navbar.css";
+import "./navbar.scss";
 import CustomLink from "../../utils/CustomLink";
 
-export default function Navbar() {
+export default function Navbar({ itemCount }) {
   return (
     <nav className="nav">
       <ul>
@@ -21,8 +21,9 @@ export default function Navbar() {
           <CustomLink to="/">
             <AiOutlineHome />
           </CustomLink>
-          <CustomLink to="/cart">
+          <CustomLink id="cart-icon" to="/cart">
             <MdShoppingCartCheckout />
+            <small>{itemCount === 0 ? "" : itemCount}</small>
           </CustomLink>
           <CustomLink to="/profile">
             <FaRegUser />

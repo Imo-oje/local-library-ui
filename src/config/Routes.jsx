@@ -5,7 +5,6 @@ import BookDetail from "../components/views/book/BookDetails";
 import Profile from "../pages/Profile";
 
 export default function RouteHandler({
-  itemCount,
   loading,
   data,
   cartItems,
@@ -18,13 +17,7 @@ export default function RouteHandler({
       <Route
         path="/"
         element={
-          <Catalog
-            itemCount={itemCount}
-            loading={loading}
-            data={data}
-            addProduct={addProduct}
-            addError={addError}
-          />
+          <Catalog loading={loading} data={data} addProduct={addProduct} addError={addError} />
         }
       />
       <Route path="/cart" element={<Cart cartItems={cartItems} updateCart={updateCart} />} />
