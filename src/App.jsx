@@ -18,7 +18,7 @@ function getData() {
         return res.json();
       })
       .then((data) => setData(data))
-      .catch((err) => setError(err))
+      .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
 
@@ -28,7 +28,6 @@ function getData() {
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [itemCount, setCount] = useState(0);
-
   const [addError, setaddError] = useState(""); //testin purpose
 
   function addItem(product) {
@@ -68,6 +67,7 @@ function App() {
   }
 
   const { loading, data, error } = getData();
+  console.log(data);
   if (error) {
     return (
       <Router>

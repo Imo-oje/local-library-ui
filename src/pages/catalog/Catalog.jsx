@@ -4,7 +4,7 @@ import "./catalog.scss";
 
 export default function ({ loading, data, addProduct, addError }) {
   return (
-    <div className="flex-container">
+    <div className="grid-container">
       {loading ? (
         <ThreeDots
           visible={true}
@@ -22,8 +22,14 @@ export default function ({ loading, data, addProduct, addError }) {
         data.map((book) => {
           return (
             <div key={book._id} className="book">
-              <Link to={`/books/${book._id}`}>{book.title}</Link>
-              <button onClick={() => addProduct(book)}>Add to cart</button>
+              <img src={book.cover} alt={book.title} />
+              <div className="details">
+                <Link className="card-title" to={`/books/${book._id}`}>
+                  {book.title}
+                </Link>
+                <p className="book-summary">{book.summary}</p>
+                <button onClick={() => addProduct(book)}>Add to cart</button>
+              </div>
             </div>
           );
         })

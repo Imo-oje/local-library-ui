@@ -27,6 +27,7 @@ function bookInfo(id) {
 export default function BookDetail({ addProduct }) {
   const { id } = useParams();
   const { info, error, loading } = bookInfo(id);
+  console.log(info)
 
   if (error) return <p>Could'nt get book info</p>;
 
