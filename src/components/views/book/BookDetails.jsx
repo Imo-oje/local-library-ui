@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import Layout from "../../../Layout";
+import { ThreeDots } from "react-loader-spinner";
 import "./book_details.css";
 
 function bookInfo(id) {
@@ -27,7 +27,6 @@ function bookInfo(id) {
 export default function BookDetail({ addProduct }) {
   const { id } = useParams();
   const { info, error, loading } = bookInfo(id);
-  console.log(info)
 
   if (error) return <p>Could'nt get book info</p>;
 
@@ -37,7 +36,15 @@ export default function BookDetail({ addProduct }) {
 
       <div>
         {loading ? (
-          "loading..."
+          <ThreeDots
+            visible={true}
+            height="80"
+            width="80"
+            color="#4fa94d"
+            radius="9"
+            ariaLabel="three-dots-loading"
+            wrapperClass="loading"
+          />
         ) : !info ? (
           "book info not found"
         ) : (

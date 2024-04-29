@@ -14,6 +14,7 @@
 body {
   background: #0d1013;
   color: #fff;
+  position: relative;
 }
 
 a {
@@ -31,4 +32,39 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    bottom: 0;
+  }
+  40% {
+    opacity: 1;
+    bottom: 10%;
+  }
+  90% {
+    opacity: 1;
+    bottom: 10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.flash-error:empty {
+  display: none;
+}
+
+.flash-error {
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(112, 93, 93);
+  transform: translateX(-50%);
+  animation: fade-in 2000ms forwards;
 }

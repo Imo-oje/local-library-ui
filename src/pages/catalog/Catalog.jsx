@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import "./catalog.scss";
 
-export default function ({ loading, data, addProduct, addError }) {
+export default function ({ loading, data, addProduct }) {
   return (
     <div className="grid-container">
       {loading ? (
@@ -13,7 +13,6 @@ export default function ({ loading, data, addProduct, addError }) {
           color="#4fa94d"
           radius="9"
           ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
           wrapperClass="loading"
         />
       ) : data.length <= 0 ? (
@@ -34,8 +33,6 @@ export default function ({ loading, data, addProduct, addError }) {
           );
         })
       )}
-
-      <p>{addError}</p>
     </div>
   );
 }
